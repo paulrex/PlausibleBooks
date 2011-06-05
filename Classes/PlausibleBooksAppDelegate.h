@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlausibleBooksAppDelegate : NSObject <UIApplicationDelegate> {
+@interface PlausibleBooksAppDelegate : NSObject <UIApplicationDelegate>
+{
     UIWindow *window;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
 
 @end
 
