@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2649AD32139B0EA600ACD8E1 /* PlausibleDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2649AD31139B0EA600ACD8E1 /* PlausibleDatabase.framework */; };
 		2649AD34139B0EB900ACD8E1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2649AD33139B0EB900ACD8E1 /* libsqlite3.0.dylib */; };
+		2649AD77139B3A3200ACD8E1 /* LocalDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */; };
+		2649AD82139B3B9700ACD8E1 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD81139B3B9700ACD8E1 /* Book.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,11 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2649AD31139B0EA600ACD8E1 /* PlausibleDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PlausibleDatabase.framework; sourceTree = "<group>"; };
 		2649AD33139B0EB900ACD8E1 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		2649AD74139B3A2B00ACD8E1 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
+		2649AD75139B3A3200ACD8E1 /* LocalDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataStore.h; sourceTree = "<group>"; };
+		2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataStore.m; sourceTree = "<group>"; };
+		2649AD80139B3B9700ACD8E1 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		2649AD81139B3B9700ACD8E1 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PlausibleBooks_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlausibleBooks_Prefix.pch; sourceTree = "<group>"; };
@@ -49,8 +56,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2649AD86139B3C0C00ACD8E1 /* Data Model */,
 				1D3623240D0F684500981E51 /* PlausibleBooksAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PlausibleBooksAppDelegate.m */,
+				2649AD74139B3A2B00ACD8E1 /* DataStore.h */,
+				2649AD75139B3A3200ACD8E1 /* LocalDataStore.h */,
+				2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -61,6 +72,15 @@
 				1D6058910D05DD3D006BFB54 /* PlausibleBooks.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2649AD86139B3C0C00ACD8E1 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				2649AD80139B3B9700ACD8E1 /* Book.h */,
+				2649AD81139B3B9700ACD8E1 /* Book.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -165,6 +185,8 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* PlausibleBooksAppDelegate.m in Sources */,
+				2649AD77139B3A3200ACD8E1 /* LocalDataStore.m in Sources */,
+				2649AD82139B3B9700ACD8E1 /* Book.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +236,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DPBDEBUG";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
