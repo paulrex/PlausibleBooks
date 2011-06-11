@@ -11,9 +11,12 @@
 @interface PlausibleBooksAppDelegate : NSObject <UIApplicationDelegate>
 {
     UIWindow *window;
+    UINavigationController *nvc;
 }
 
 @property (nonatomic, retain) UIWindow *window;
+
+- (NSString *) createEditableCopyOfDatabaseIfNeededAndReturnPath;
 
 @end
 

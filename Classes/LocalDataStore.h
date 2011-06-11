@@ -13,6 +13,7 @@
 @interface LocalDataStore : NSObject <DataStore>
 {
     PLSqliteDatabase *db;
+    NSArray *dehydratedBooks;
     
 }
 

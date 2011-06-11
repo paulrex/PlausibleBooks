@@ -7,9 +7,12 @@
  *
  */
 
+#import "Book.h"
+
 @protocol DataStore <NSObject>
 
 @required
-
+- (NSArray *) dehydratedBooks;
+- (Book *) newHydratedBookWithId: (int) pk;
 
 @end

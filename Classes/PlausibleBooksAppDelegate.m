@@ -10,6 +10,10 @@
 // and shows you how to use PlausibleDatabase.
 
 #import "PlausibleBooksAppDelegate.h"
+#import "RootViewController.h"
+#import "LocalDataStore.h"
+
+#define kDatabaseFileName @"Books.sqlite"
 
 @implementation PlausibleBooksAppDelegate
 
@@ -21,14 +25,49 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // set up the window to account for not having a MainWindow.xib
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     window.backgroundColor = [UIColor whiteColor];
     
-    // Override point for customization after application launch.
+    // now set up the database layer
     
+    NSString *dbPath = [self createEditableCopyOfDatabaseIfNeededAndReturnPath];
+    LocalDataStore *lds = [[LocalDataStore alloc] initWithPathToDatabase:dbPath];
+    
+    // now set up the view controllers, add to window, and show
+    // note that all of our view controllers use class composition to inject a dependency to the LocalDataStore
+    
+    RootViewController *rvc = [[RootViewController alloc] init];
+    rvc.dataStore = lds;
+    
+    nvc = [[UINavigationController alloc] initWithRootViewController:rvc];
+    [rvc release];
+        
+    [self.window addSubview:nvc.view];
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (NSString *) createEditableCopyOfDatabaseIfNeededAndReturnPath
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:kDatabaseFileName];
+	
+	BOOL success = [fileManager fileExistsAtPath:writableDBPath];
+	
+	if (success)
+		return writableDBPath;
+	
+	NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:kDatabaseFileName];
+	NSError *error;
+	success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+	if (!success)
+        DebugLog(@"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+    
+    return writableDBPath;
 }
 
 
@@ -80,7 +119,9 @@
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
+    [nvc release];
     [window release];
     [super dealloc];
 }

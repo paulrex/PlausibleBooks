@@ -15,6 +15,8 @@
 		2649AD34139B0EB900ACD8E1 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2649AD33139B0EB900ACD8E1 /* libsqlite3.0.dylib */; };
 		2649AD77139B3A3200ACD8E1 /* LocalDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */; };
 		2649AD82139B3B9700ACD8E1 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD81139B3B9700ACD8E1 /* Book.m */; };
+		2649AD90139B3D6E00ACD8E1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD89139B3D6E00ACD8E1 /* RootViewController.m */; };
+		26CF60F813A3DC870003C36C /* Books.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 26CF60F713A3DC870003C36C /* Books.sqlite */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,16 @@
 		2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataStore.m; sourceTree = "<group>"; };
 		2649AD80139B3B9700ACD8E1 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		2649AD81139B3B9700ACD8E1 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		2649AD88139B3D6E00ACD8E1 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2649AD89139B3D6E00ACD8E1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2649AD8A139B3D6E00ACD8E1 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2649AD8B139B3D6E00ACD8E1 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		2649AD8C139B3D6E00ACD8E1 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		2649AD8D139B3D6E00ACD8E1 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		2649AD8E139B3D6E00ACD8E1 /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		2649AD8F139B3D6E00ACD8E1 /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
+		26CF60F713A3DC870003C36C /* Books.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Books.sqlite; sourceTree = "<group>"; };
+		26CF610913A3E2360003C36C /* DataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PlausibleBooks_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlausibleBooks_Prefix.pch; sourceTree = "<group>"; };
@@ -56,10 +68,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2649AD87139B3D6E00ACD8E1 /* View Controllers */,
 				2649AD86139B3C0C00ACD8E1 /* Data Model */,
 				1D3623240D0F684500981E51 /* PlausibleBooksAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PlausibleBooksAppDelegate.m */,
-				2649AD74139B3A2B00ACD8E1 /* DataStore.h */,
 				2649AD75139B3A3200ACD8E1 /* LocalDataStore.h */,
 				2649AD76139B3A3200ACD8E1 /* LocalDataStore.m */,
 			);
@@ -79,8 +91,25 @@
 			children = (
 				2649AD80139B3B9700ACD8E1 /* Book.h */,
 				2649AD81139B3B9700ACD8E1 /* Book.m */,
+				2649AD74139B3A2B00ACD8E1 /* DataStore.h */,
 			);
 			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		2649AD87139B3D6E00ACD8E1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26CF610913A3E2360003C36C /* DataViewController.h */,
+				2649AD88139B3D6E00ACD8E1 /* RootViewController.h */,
+				2649AD89139B3D6E00ACD8E1 /* RootViewController.m */,
+				2649AD8A139B3D6E00ACD8E1 /* DetailViewController.h */,
+				2649AD8B139B3D6E00ACD8E1 /* DetailViewController.m */,
+				2649AD8C139B3D6E00ACD8E1 /* AddViewController.h */,
+				2649AD8D139B3D6E00ACD8E1 /* AddViewController.m */,
+				2649AD8E139B3D6E00ACD8E1 /* EditingViewController.h */,
+				2649AD8F139B3D6E00ACD8E1 /* EditingViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -107,6 +136,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				26CF60F713A3DC870003C36C /* Books.sqlite */,
 				8D1107310486CEB800E47090 /* PlausibleBooks-Info.plist */,
 			);
 			name = Resources;
@@ -173,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26CF60F813A3DC870003C36C /* Books.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +218,7 @@
 				1D3623260D0F684500981E51 /* PlausibleBooksAppDelegate.m in Sources */,
 				2649AD77139B3A3200ACD8E1 /* LocalDataStore.m in Sources */,
 				2649AD82139B3B9700ACD8E1 /* Book.m in Sources */,
+				2649AD90139B3D6E00ACD8E1 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
