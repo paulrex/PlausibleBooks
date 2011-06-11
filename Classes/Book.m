@@ -11,6 +11,7 @@
 
 @implementation Book
 
+@synthesize pk;
 @synthesize title;
 @synthesize author;
 @synthesize copyright;

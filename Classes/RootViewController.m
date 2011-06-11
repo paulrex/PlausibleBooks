@@ -183,28 +183,13 @@
  Creates a new book, an AddViewController to manage addition of the book, and a new managed object context for the add controller to keep changes made to the book discrete from the application's managed object context until the book is saved.
  IMPORTANT: It's not necessary to use a second context for this. You could just use the existing context, which would simplify some of the code -- you wouldn't need to merge changes after a save, for example. This implementation, though, illustrates a pattern that may sometimes be useful (where you want to maintain a separate set of edits).  The root view controller sets itself as the delegate of the add controller so that it can be informed when the user has completed the add operation -- either saving or canceling (see addViewController:didFinishWithSave:).
 */
-- (void) addBook
+- (void) addBook: (id) sender
 {
-	/*
-    AddViewController *addViewController = [[AddViewController alloc] initWithStyle:UITableViewStyleGrouped];
-	addViewController.delegate = self;
-	
-	// Create a new managed object context for the new book -- set its persistent store coordinator to the same as that from the fetched results controller's context.
-	NSManagedObjectContext *addingContext = [[NSManagedObjectContext alloc] init];
-	self.addingManagedObjectContext = addingContext;
-	[addingContext release];
-	
-	[addingManagedObjectContext setPersistentStoreCoordinator:[[fetchedResultsController managedObjectContext] persistentStoreCoordinator]];
-		
-	addViewController.book = (Book *)[NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:addingContext];
-	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addViewController];
-	
-    [self.navigationController presentModalViewController:navController animated:YES];
-	
-	[addViewController release];
-	[navController release];
-     */
+    AddViewController *avc = [[AddViewController alloc] init];
+    avc.delegate = self;
+    
+    [self.navigationController pushViewController:avc animated:YES];
+    [avc release];    
 }
 
 
@@ -215,6 +200,7 @@
 {	
 	if (save)
     {
+        
 		/*
 		 The new book is associated with the add controller's managed object context.
 		 This is good because it means that any edits that are made don't affect the application's main managed object context -- it's a way of keeping disjoint edits in a separate scratchpad -- but it does make it more difficult to get the new book registered with the fetched results controller.

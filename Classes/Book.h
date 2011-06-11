@@ -11,11 +11,13 @@
 
 @interface Book : NSObject
 {
+    int pk;
     NSString *title;
     NSString *author;
     NSDate *copyright;
 }
 
+@property (nonatomic, assign) int pk;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *author;
 @property (nonatomic, copy) NSDate *copyright;

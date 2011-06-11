@@ -17,6 +17,7 @@
 		2649AD82139B3B9700ACD8E1 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD81139B3B9700ACD8E1 /* Book.m */; };
 		2649AD90139B3D6E00ACD8E1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD89139B3D6E00ACD8E1 /* RootViewController.m */; };
 		26CF60F813A3DC870003C36C /* Books.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 26CF60F713A3DC870003C36C /* Books.sqlite */; };
+		26CF616413A3FCEB0003C36C /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2649AD8D139B3D6E00ACD8E1 /* AddViewController.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +103,10 @@
 				26CF610913A3E2360003C36C /* DataViewController.h */,
 				2649AD88139B3D6E00ACD8E1 /* RootViewController.h */,
 				2649AD89139B3D6E00ACD8E1 /* RootViewController.m */,
-				2649AD8A139B3D6E00ACD8E1 /* DetailViewController.h */,
-				2649AD8B139B3D6E00ACD8E1 /* DetailViewController.m */,
 				2649AD8C139B3D6E00ACD8E1 /* AddViewController.h */,
 				2649AD8D139B3D6E00ACD8E1 /* AddViewController.m */,
+				2649AD8A139B3D6E00ACD8E1 /* DetailViewController.h */,
+				2649AD8B139B3D6E00ACD8E1 /* DetailViewController.m */,
 				2649AD8E139B3D6E00ACD8E1 /* EditingViewController.h */,
 				2649AD8F139B3D6E00ACD8E1 /* EditingViewController.m */,
 			);
@@ -219,6 +220,7 @@
 				2649AD77139B3A3200ACD8E1 /* LocalDataStore.m in Sources */,
 				2649AD82139B3B9700ACD8E1 /* Book.m in Sources */,
 				2649AD90139B3D6E00ACD8E1 /* RootViewController.m in Sources */,
+				26CF616413A3FCEB0003C36C /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
